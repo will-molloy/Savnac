@@ -1,0 +1,13 @@
+.tabbed > *{
+ height:500px;
+}
+.tabbed .tab{
+    display:none;
+}
+.tabbed .tab.active-tab{
+    display:inline-block;
+}
+
+.btn.active{
+    background-color:#eee;
+}

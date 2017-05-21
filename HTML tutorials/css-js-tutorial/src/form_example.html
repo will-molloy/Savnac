@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An example of how HTML CSS and JS work together">
+    <meta name="author" content="Mike Merry">
+
+    <title>CSS/JS Tutorial</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/tutorial2.css" rel="stylesheet">
+
+
+
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://www.cs.auckland.ac.nz/courses/compsci345s1c/">Compsci 345 / Softeng 350</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="https://flukeout.github.io/">Flukeout - CSS Game</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                    
+                <form class="submission-form two-wide" onsubmit="submit_function(this)">
+                    
+
+                    <fieldset>
+
+                        <legend>Shipping details</legend>
+
+                        <div class="form-group row">
+                            <label for="fname"> First name</label>
+                            <input name="fname" type="text">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="lname">Last name</label>
+                            <input name="lname" type="text">
+                        </div>
+
+                        <div class="form-group row required">
+                            <label for="address_1">Address 1</label>
+                            <input type="text" name="address_1">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="address_1">Address 2</label>
+                            <input name="address_1" type="text">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email">Email</label>
+                            <input name="email" type="email">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="topic">Class</label>
+                            <select name="topic">
+                                <option value="350">Softeng 350</option>
+                                <option value="345">Compsci 345</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset>
+                        <legend> Comments for shipping</legend>
+
+                        <div class="form-group row">
+                            <label for="shipping_details">Shipping details</label>
+                            <textarea name="shipping_details" rows="10" columns="30">Type shipping info here</textarea>
+                        </div>
+
+                        <div class="form-group row required">
+                            <label for="ts_and_cs">I have read the terms and conditions</label>
+                            <input type="checkbox" name="ts_and_cs" value="">
+                        </div>
+                    </fieldset> 
+                    
+
+                    <fieldset>
+                        <legend> Credit Card Details</legend>
+
+                        <div class="form-group row required">
+                            <label for="cc_name">Name on Card</label>
+                            <input type="text" name="cc_name">
+                        </div>
+
+                        <div class="form-group row required">
+                            <label for="cc_no">Card Number</label>
+                            <input type="text" name="cc_no" pattern="^4[0-9]{12}(?:[0-9]{3})?">
+                        </div>
+
+                        <div class="form-group row form-options">
+                            <div class="row">
+                                <label class="radio-inline">Master Card:</label><input type="radio" name="card_type" value="master">
+                            </div>
+                            <div class="row">
+                                <label class="radio-inline">Visa:</label><input type="radio" name="card_type" value="visa">
+                            </div>
+                            <div class="row">
+                                <label class="radio-inline">AmEx:</label><input type="radio" name="card_type" value="amex">
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    
+                    <button type="button" onclick="submit_function(this)">Submit</button>
+                </form>
+
+
+                <div id="response_area">
+                    <p>
+                    </p>
+                </div>
+                
+                <button onclick="update_circles()">Make a circle</button>
+                
+                <div class="circle">
+                </div>
+            </div>
+        </div>
+
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="assets/js/lib/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+
+
+    <script src="assets/js/tutorial2.js"></script>
+
+</body>
+
+</html>
