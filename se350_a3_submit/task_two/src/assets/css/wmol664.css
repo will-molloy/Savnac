@@ -17,22 +17,13 @@ html, body {
     margin: 0;
     font-size: 20px;
 }
-#sidebar {
-    width: 20%;
-    height: 100%;
-    position: fixed;
-    outline: 1px solid;
-    background: red;
-}
-#breadcrumb_and_content {
-    width: 80%;
-    height: auto;
-    outline: 1px solid;
-    position: absolute;
-    right: 0;
-    background: blue;
-}
-/* For sidebar height from top */
+
+/* Padding for top or breadcrumb */
 .affix {
-      top: 10px;
-  }
+    top: 10px;
+}
+
+/* Needed, when affixed, breadcrumb collapses and scrollable content jumps up */
+.nav-wrapper {
+    min-height:60px;
+}
