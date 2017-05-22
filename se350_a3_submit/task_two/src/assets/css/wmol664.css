@@ -6,7 +6,6 @@
     margin:1.5em;
 }
 
-
 .two-wide > * {
     display:inline-block;
     width:49%;
@@ -18,14 +17,14 @@ html, body {
     margin: 0;
     font-size: 20px;
 }
-#left {
+#sidebar {
     width: 20%;
     height: 100%;
     position: fixed;
     outline: 1px solid;
     background: red;
 }
-#right {
+#breadcrumb_and_content {
     width: 80%;
     height: auto;
     outline: 1px solid;
@@ -33,3 +32,7 @@ html, body {
     right: 0;
     background: blue;
 }
+/* For sidebar height from top */
+.affix {
+      top: 10px;
+  }
