@@ -18,3 +18,7 @@ Fixed sidebar and scrollable content:
 Bootstrap css for navbar:
 	https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css
 
+Breadcrumb triangles:
+	https://css-tricks.com/triangle-breadcrumbs/
+	https://codepen.io/team/css-tricks/pen/xRmmdr
+	
