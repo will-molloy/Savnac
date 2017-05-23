@@ -80,7 +80,7 @@
         <fieldset id="home" class="tab active-tab">
           <legend>Home</legend>
           <div class="col-sm-6">
-            <button onclick="myFunction()">Art History</button><br />
+            <button onclick="showArtSubjects()">Art History</button><br />
             <h2>Biology</h2><br />
             <h2>Chemistry</h2><br />
             <h2>Economics</h2><br />
@@ -88,17 +88,13 @@
             <h2>Physics</h2><br />
           </div>
           <div class="col-sm-6">
-            <div id="myDIV">
-              <table style="width:100%">
-                <tr>
-                  <td>Classical Music</td>
-                  <td>Lorem Ipsum</td>
-                </tr>
-                <tr>
-                  <td>Lorem Ipsum</td>
-                  <td>Lorem Ipsum</td>
-                </tr>
-              </table>
+            <div id="artSubjects">
+              <ul>
+                <li>Classical Music</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+              </ul>
             </div>
           </div>
         </fieldset>
@@ -108,11 +104,16 @@
           <legend>Musics</legend>
           <div class="col-sm-10">
             <h2>Online Portfolio</h2>
-            <h2>Structured Questions</h2>
+            <button onclick="showSQOptions()">Structured Questions</button>
             <h2>Resources</h2>
           </div>
           <div class="col-sm-2">
-            <h2>1a2a3a</h2>
+            <div id="sqOptions">
+              <ul>
+                <li>Assignment 1</li>
+                <li>Practice</li>
+              </ul>
+            </div>
           </div>
         </fieldset>
 
