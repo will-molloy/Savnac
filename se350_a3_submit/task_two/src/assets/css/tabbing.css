@@ -1,0 +1,29 @@
+/* ??? */
+.tabbed > *{
+  height:500px;
+}
+.tabbed .tab{
+  display:none;
+}
+.tabbed .tab.active-tab{
+  display:inline-block;
+}
+
+.btn{
+  font: bold 24px Sans-Serif;
+  letter-spacing: -1px;
+  text-decoration: none;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.btn:hover{
+  color:purple;
+}
+
+.btn.active{
+  color:yellow;
+}
+
+.btn:focus { outline: none; }
