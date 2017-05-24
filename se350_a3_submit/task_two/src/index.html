@@ -65,11 +65,11 @@
       <!-- breadcrumb. offset = image height + .affix top padding-->
       <div class ="row">
         <div class="nav-wrapper">
-          <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb nav nav-tabs" data-spy="affix" data-offset-top="210">
-            <li class="tab-pane active" data-ref="home" onclick="change_tab(this)">Home</li>
-            <li data-ref="art_history">Art History</li>
-            <li class="tab-controls" data-ref="classical_music" onclick="change_tab(this)">Classical Music</li>
-            <li class="tab-controls" data-ref="structured_questions" onclick="change_tab(this)">Structured Questions</li>
+          <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb" data-spy="affix" data-offset-top="210">
+            <li id="homeTab" class="tab-controls active" data-ref="home" onclick="change_tab(this)">Home</li>
+            <li id="ahTab" class="tab-controls" data-ref="art_history" onclick="ahTabButton()">Art History</li>
+            <li id="cmTab" class="tab-controls" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
+            <li id="sqTab" class="tab-controls" data-ref="structured_questions" onclick="sqTabButton()">Structured Questions</li>
           </ol>
         </div>
       </div>
@@ -92,8 +92,8 @@
                 </ul>
               </div>
               <div class="col-sm-3">
-                <ul>
-                  <li class="tab-controls available-subdomain" onclick="showClassicalMusicTab()" type="button">Classical Music</li>
+                <ul data-tabref="pages">
+                  <li class="available-subdomain" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
                   <li>Renaissance</li>
                   <li>Tudors</li>
                 </ul>
@@ -129,20 +129,19 @@
 
         <!-- Classical Music tab -->
         <fieldset id="classical_music" class="tab">
-          <legend>Musics</legend>
-          <div class="col-sm-10">
-            <h2>Online Portfolio</h2>
-            <button onclick="showSQOptions()">Structured Questions</button>
-            <h2>Resources</h2>
-          </div>
-          <div class="col-sm-2">
-            <div id="sqOptions">
+          <row>
+            <div class="col-sm-4">
+              <h2 class="subject-header available-domain" onclick="showAssignments()">Structured Questions</h2><br />
+            </div>
+            <div class="col-sm-6" id="assignments">
               <ul>
-                <li>Assignment 1</li>
-                <li>Practice</li>
+                <li>
+                  Assignment1
+                </li>
               </ul>
             </div>
-          </div>
+          </row>
+
         </fieldset>
 
         <!-- Structured Qs tab -->
@@ -157,6 +156,5 @@
       <h2>RIGHT SIDEBAR</h2>
     </div>
   </div>
-
 </body>
 </html>
