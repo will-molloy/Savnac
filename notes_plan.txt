@@ -26,3 +26,8 @@ Breadcrumb triangles:
 	
 Tabbing:
 	TUTORIAL 3 DHTML :o
+	
+Change tabs with external button:
+	https://stackoverflow.com/a/32339934
+	
+	
