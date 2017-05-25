@@ -30,7 +30,6 @@ function showAssignments() {
   } else {
     x.style.visibility = 'visible';
 
-
     $("#sqTab").addClass("active")
     $("#sqTab").css( "visibility", "visible" );
   }
@@ -58,6 +57,7 @@ function change_tab(el){
     $("#cmTab").css( "visibility", "hidden" );
     $("#sqTab").css( "visibility", "hidden" );
   }
+  removeAssignmentTabFromBreadCrumb();
 }
 
 function show_music_tab(){
@@ -80,11 +80,17 @@ function show_music_tab(){
 }
 
 function make_tabs_non_active(){
-  $(".tab-controls").removeClass("active")
+  $(".tab-controls").removeClass("active");
+  removeAssignmentTabFromBreadCrumb();
 }
 
 function close_tab_panes(){
-  $(".active-tab").removeClass("active-tab")
+  removeAssignmentTabFromBreadCrumb();
+  $(".active-tab").removeClass("active-tab");
+}
+
+function show_all_tabs_in_breadcrumb(){
+  $("#tabbing-controls > *").css( "visibility", "visible" );
 }
 
 function ahTabButton(){
@@ -111,4 +117,47 @@ function sqTabButton(){
   $("#ahTab").css( "visibility", "visible" );
   $("#cmTab").css( "visibility", "visible" );
   $("#sqTab").css( "visibility", "visible" );
+}
+
+function createAssignment(option){
+  close_tab_panes();
+  make_tabs_non_active();
+  show_all_tabs_in_breadcrumb();
+
+  // Show structured questions image at top
+  $("#assignment_tab_pane").addClass("active-tab");
+
+  // Depending on list element clicked, show correct tab pane and breadcrumb
+  var breadCrumbText = "";
+  switch(parseInt(option)){
+    case 1:
+      $("#doing_assignment_tab_pane, #pages").addClass("active-tab");
+      breadCrumbText += "Assignment 2";
+      break;
+    case 2:
+      $("#view_feedback_assignment_tab_pane, #pages").addClass("active-tab");
+      breadCrumbText += "Assignment 1 Feedback";
+      break;
+    case 3:
+      $("#give_feedback_assignment_tab_pane, #pages").addClass("active-tab");
+      breadCrumbText += "Assignment 1 Review";
+      break;
+    default:
+      console.log("No valid assignment tab pane: " + option)
+  }
+
+  // Append assignment tab to breadcrumb
+  var tabbingControls = document.getElementById("tabbing-controls");
+  var newTabItem = document.createElement("li");
+  var newTabItemValue = document.createTextNode(breadCrumbText);
+
+  newTabItem.appendChild(newTabItemValue);
+  newTabItem.className += "active";
+  newTabItem.setAttribute("id", "assignment_tab"); // to remove later
+
+  tabbingControls.appendChild(newTabItem);
+}
+
+function removeAssignmentTabFromBreadCrumb(){
+  $('#assignment_tab').remove();
 }

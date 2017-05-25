@@ -20,7 +20,8 @@
   <script src="assets/js/lib/jquery-3.2.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/tabbing.js"></script>
-  <script src="assets/js/wmol664.js"></script>
+  <script src="assets/js/control_tabs.js"></script>
+  <script src="assets/js/control_assignments.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,7 @@
       </fieldset>
 
       <!-- Structured Qs tab -->
-      <fieldset id="structured_questions" class="tab">
+      <fieldset id="assignment_tab_pane" class="tab">
         <h1>Structured Questions</h1>
       </fieldset>
     </div>
@@ -50,7 +51,7 @@
   <div class="container-fluid">
 
     <!-- Left side - fixed sidebar. offset = image height + .affix top padding-->
-    <nav class="col-sm-3 sidebar">
+    <nav class="col-sm-2 sidebar">
       <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="210">
         <li><a href="#profile">Profile</a></li>
         <li><a href="#calendar">Notifications</a></li>
@@ -60,7 +61,7 @@
     </nav>
 
     <!-- Right side - fixed breadcrumb and scrollable content -->
-    <div class="col-sm-6">
+    <div class="col-sm-8">
 
       <!-- breadcrumb. offset = image height + .affix top padding-->
       <div class ="row">
@@ -135,24 +136,48 @@
             </div>
             <div class="col-sm-6" id="assignments">
               <ul>
-                <li>
-                  Assignment1
-                </li>
+                <li class="available-subdomain" onclick="createAssignment('1')">Complete assignment 2</li>
+                <li class="available-subdomain" onclick="createAssignment('2')">View assignment 1 feedback</li>
+                <li class="available-subdomain" onclick="createAssignment('3')">Complete assignment 1 feedback</li>
               </ul>
+            </div>
+          </row>
+          <row>
+            <div class="col-sm-12">
+              <h2 class="subject-header">Online Portfolio</h2><br />
+            </div>
+          </row>
+          <row>
+            <div class="col-sm-12">
+              <h2 class="subject-header">Resources</h2><br />
             </div>
           </row>
 
         </fieldset>
 
-        <!-- Structured Qs tab -->
-        <fieldset id="structured_questions" class="tab">
+        <!-- Assignment tab pane (Doing structured questions)-->
+        <fieldset id="doing_assignment_tab_pane" class="tab">
           <legend>SQs</legend>
+
+
+
+
+        </fieldset>
+
+        <!-- Assignment tab pane (Feedback for assignment)-->
+        <fieldset id="view_feedback_assignment_tab_pane" class="tab">
+          <legend>VFB</legend>
+        </fieldset>
+
+        <!-- Assignment tab pane (Giving feedback for assignment)-->
+        <fieldset id="give_feedback_assignment_tab_pane" class="tab">
+          <legend>GFB</legend>
         </fieldset>
 
       </div>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <h2>RIGHT SIDEBAR</h2>
     </div>
   </div>
