@@ -85,8 +85,7 @@ function make_tabs_non_active(){
 }
 
 function close_tab_panes(){
-  removeAssignmentTabFromBreadCrumb();
-  $(".active-tab").removeClass("active-tab");
+  $("#pages > *").removeClass("active-tab");
 }
 
 function show_all_tabs_in_breadcrumb(){
@@ -160,4 +159,30 @@ function createAssignment(option){
 
 function removeAssignmentTabFromBreadCrumb(){
   $('#assignment_tab').remove();
+}
+
+function loadDoingAssignment(){
+  close_tab_panes();
+
+  // Show assignment2 tab pane
+  $("#assignment2").addClass("active-tab");
+  // Show structured questions image at top
+  $("#assignment_tab_pane").addClass("active-tab");
+}
+
+// Similar to tabbing.js (DHTML Tutorial) - change question for the sq assignment
+function change_question(el){
+  caller = $(el)
+
+  caller.parent().find(".tab-controls").removeClass("active")
+  caller.addClass('active')
+
+  tab_ref = caller.attr('data-ref')
+  tab_group = caller.parent().attr('data-tabref')
+
+  console.log(tab_ref)
+  console.log(tab_group)
+
+  $("#" + tab_group + " .active-tab").removeClass("active-tab")
+  $("#" + tab_group + " #" + tab_ref).addClass("active-tab")
 }

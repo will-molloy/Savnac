@@ -52,3 +52,8 @@ html, body {
 .sidebar{
   background-color:#ddd;color:#fff;height:200px;
 }
+
+/* Assignment page */
+.fixed-outline{
+  position:fixed;
+}

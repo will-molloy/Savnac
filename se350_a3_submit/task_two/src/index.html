@@ -60,8 +60,8 @@
       </ul>
     </nav>
 
-    <!-- Right side - fixed breadcrumb and scrollable content -->
-    <div class="col-sm-8">
+    <!-- Center - fixed breadcrumb and scrollable content -->
+    <div class="col-sm-7">
 
       <!-- breadcrumb. offset = image height + .affix top padding-->
       <div class ="row">
@@ -157,12 +157,48 @@
 
         <!-- Assignment tab pane (Doing structured questions)-->
         <fieldset id="doing_assignment_tab_pane" class="tab">
-          <legend>SQs</legend>
-
-
-
-
+          <legend>doing_assignment_tab_pane</legend>
+          <h2 class="assignment_header">Assignment 2: Mozart</h2>
+          <p>
+            <b>Outline:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ipsum metus, vel accumsan magna blandit vel. Proin laoreet consequat tincidunt. Pellentesque id felis ut enim scelerisque malesuada vel eget leo. Curabitur maximus tellus eget leo laoreet, quis accumsan nisl ornare. Phasellus vitae volutpat odio. Aliquam volutpat hendrerit varius. Suspendisse gravida elit eu erat faucibus tincidunt. Sed a urna eget dolor tristique dictum condimentum non est. Donec ac diam nisi. Proin finibus sed felis ac sollicitudin. Sed molestie purus a ultrices laoreet. Nulla finibus, enim ac lobortis vulputate, mauris metus gravida elit, sit amet euismod sem leo id metus. Vivamus iaculis gravida nulla a fermentum.
+          </p>
+          <p>
+            <b>Number of Questions: </b>3 <b>Time: </b> 30:00
+          </p>
+          <button onclick="loadDoingAssignment()">Attempt</button>
         </fieldset>
+
+        <div id="assignment2" class="tab container-fluid">
+          <row>
+            <div class="col-sm-4">
+              <p>
+                <b>Outline:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ipsum metus, vel accumsan magna blandit vel. Proin laoreet consequat tincidunt. Pellentesque id felis ut enim scelerisque malesuada vel eget leo. Curabitur maximus tellus eget leo laoreet, quis accumsan nisl ornare. Phasellus vitae volutpat odio. Aliquam volutpat hendrerit varius. Suspendisse gravida elit eu erat faucibus tincidunt. Sed a urna eget dolor tristique dictum condimentum non est. Donec ac diam nisi. Proin finibus sed felis ac sollicitudin. Sed molestie purus a ultrices laoreet. Nulla finibus, enim ac lobortis vulputate, mauris metus gravida elit, sit amet euismod sem leo id metus. Vivamus iaculis gravida nulla a fermentum.
+              </p>
+            </div>
+
+            <div class="col-sm-4"> <!-- USE FORM - onsubmit() function to check all answers etc -->
+              <div id="questions" class="row tabbed">
+                <div id="question1" class="tab active-tab">
+                  Q1
+                </div>
+                <div id="question2" class="tab">
+                  Q2
+                </div>
+                <div id="question3" class="tab">
+                  Q3
+                </div>
+              </div>
+
+              <!-- Questions nav control -->
+              <ul id="question-tab-controls" data-tabref="questions">
+                <!-- first one  isnt active/?? -->
+                <li id="q1" class="btn tab-controls active" data-ref="question1" onclick="change_question(this)">Q1</li>
+                <li id="q2" class="btn tab-controls" data-ref="question2" onclick="change_question(this)">Q2</li>
+                <li id="q3" class="btn tab-controls" data-ref="question3" onclick="change_question(this)">Q3</li>
+              </ul>
+            </div>
+          </row>
+        </div>
 
         <!-- Assignment tab pane (Feedback for assignment)-->
         <fieldset id="view_feedback_assignment_tab_pane" class="tab">
