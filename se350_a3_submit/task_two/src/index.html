@@ -158,6 +158,9 @@
 
         <!-- Tab-pane with table of assignments -->
         <fieldset id="assignmentTable" class="tab container">
+          <legend>
+            Assignments:
+          </legend>
           <table style="width:100%" class="assignment-table">
             <tr>
               <th>Title</th>
@@ -169,20 +172,20 @@
               <td>Assignment 2: The Piano</td>
               <td>Grade: 10%</td>
               <td>13/05/2017</td>
-              <td>Attempt</td>
+              <td class="table-link" onclick="createAssignmentLandingPage()">Attempt Assignment</td>
             </tr>
             <tr>
               <td>Assignment 1: Mozart</td>
               <td>Grade: 8.45/10</td>
               <td>Closed</td>
-              <td>View/Provide Feedback</td>
+              <td class="table-link">View/Provide Feedback</td>
             </tr>
           </table>
         </fieldset>
 
         <!-- Move below to new HTML -->
         <!-- Assignment tab pane (Doing structured questions)-->
-        <fieldset id="doing_assignment_tab_pane" class="tab">
+        <fieldset id="assignmentLandingPage" class="tab">
           <legend>doing_assignment_tab_pane</legend>
           <h2 class="assignment_header">Assignment 2: Mozart</h2>
           <p>

@@ -118,7 +118,7 @@ function sqTabButton(){
 
 }
 
-function createAssignment(option){
+function createAssignment(){
   close_tab_panes();
   make_tabs_non_active();
   show_all_tabs_in_breadcrumb();
@@ -126,22 +126,22 @@ function createAssignment(option){
   // Show structured questions image at top
   $("#assignment_tab_pane").addClass("active-tab");
 
-  // Depending on list element clicked, show correct tab pane and breadcrumb
-  var breadCrumbText = "";
-  switch(parseInt(option)){
-    case 1:
-      $("#doing_assignment_tab_pane, #pages").addClass("active-tab");
-      break;
-    case 2:
-      $("#view_feedback_assignment_tab_pane, #pages").addClass("active-tab");
-      break;
-    case 3:
-      break;
-    default:
-      console.log("No valid assignment tab pane: " + option)
-  }
+  // Load assignment table
   $("#assignmentTable, #pages").addClass("active-tab");
   $("#assignmentTab").addClass("active");
+}
+
+function createAssignmentLandingPage(){
+  close_tab_panes();
+  make_tabs_non_active();
+  show_all_tabs_in_breadcrumb();
+
+  // Show structured questions image at top
+  $("#assignment_tab_pane").addClass("active-tab");
+  $("#assignmentTab").addClass("active");
+
+  $("#assignmentLandingPage, #pages").addClass("active-tab");
+
 }
 
 function loadDoingAssignment(){

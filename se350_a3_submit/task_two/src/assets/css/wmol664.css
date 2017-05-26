@@ -82,7 +82,6 @@ table {
    border-collapse: collapse;
 }
 
-#nav ul {
-    display: inline-block;
-    list-style-type: none;
+.table-link {
+  text-decoration: underline;
 }
