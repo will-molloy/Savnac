@@ -30,4 +30,5 @@ Tabbing:
 Change tabs with external button:
 	https://stackoverflow.com/a/32339934
 	
-	
+Breadcrumb inside nav bar:
+	https://stackoverflow.com/a/20271642

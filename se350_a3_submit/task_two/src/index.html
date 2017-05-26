@@ -27,7 +27,7 @@
 <body>
   <!-- upper page - image -->
   <div class="container-fluid" style="background-color:#2196F3;color:#fff;height:200px;">
-    <div id="pages" class="row tabbed" data-offset-top="210">
+    <div id="pages" class="row tabbed" data-offset-top="200">
 
       <!-- Classical Music tab -->
       <fieldset id="home" class="tab active-tab">
@@ -41,7 +41,7 @@
 
       <!-- Structured Qs tab -->
       <fieldset id="assignment_tab_pane" class="tab">
-        <h1>Structured Questions</h1>
+        <h1>Assignments</h1>
       </fieldset>
     </div>
   </div>
@@ -50,30 +50,31 @@
   <!-- lower page -->
   <div class="container-fluid">
 
-    <!-- Left side - fixed sidebar. offset = image height + .affix top padding-->
-    <nav class="col-sm-2 sidebar">
-      <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="210">
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#calendar">Notifications</a></li>
-        <li><a href="#calendar">Calendar</a></li>
-        <li><a href="#calendar">Grades</a></li>
-      </ul>
-    </nav>
+    <!-- Top nav bar and breadcrumb-->
+    <nav class="navbar navbar-inverse navbar-static-top" data-spy="affix" data-offset-top="200">
+      <div class="col-sm-8 col-sm-offset-2">
 
-    <!-- Center - fixed breadcrumb and scrollable content -->
-    <div class="col-sm-7">
+        <ul class="nav navbar-nav">
 
-      <!-- breadcrumb. offset = image height + .affix top padding-->
-      <div class ="row">
-        <div class="nav-wrapper">
-          <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb" data-spy="affix" data-offset-top="210">
+          <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb list-inline" width="50%">
             <li id="homeTab" class="tab-controls active" data-ref="home" onclick="change_tab(this)">Home</li>
             <li id="ahTab" class="tab-controls" data-ref="art_history" onclick="ahTabButton()">Art History</li>
             <li id="cmTab" class="tab-controls" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
             <li id="sqTab" class="tab-controls" data-ref="structured_questions" onclick="sqTabButton()">Structured Questions</li>
+            <li id="assignmentTab" class="tab-controls">Assignments</li>
           </ol>
-        </div>
+
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Notifications</a></li>
+          <li><a href="#">Calendar</a></li>
+
+        </ul>
+
       </div>
+    </nav>
+
+    <!-- Center - fixed breadcrumb and scrollable content -->
+    <div class="col-sm-8 col-sm-offset-2">
 
       <!-- Scrollable page content -->
       <div id="pages" class="row tabbed" data-offset-top="200">
@@ -136,9 +137,9 @@
             </div>
             <div class="col-sm-6" id="assignments">
               <ul>
-                <li class="available-subdomain" onclick="createAssignment('1')">Complete assignment 2</li>
-                <li class="available-subdomain" onclick="createAssignment('2')">View assignment 1 feedback</li>
-                <li class="available-subdomain" onclick="createAssignment('3')">Complete assignment 1 feedback</li>
+                <li class="available-subdomain" onclick="createAssignment()">View Assignments</li>
+                <li>View Exemplars</li>
+                <li>View Homework Exercises</li>
               </ul>
             </div>
           </row>
@@ -155,6 +156,31 @@
 
         </fieldset>
 
+        <!-- Tab-pane with table of assignments -->
+        <fieldset id="assignmentTable" class="tab container">
+          <table style="width:100%" class="assignment-table">
+            <tr>
+              <th>Title</th>
+              <th>Grade</th>
+              <th>Closing Date</th>
+              <th>Attempt/Feedback</th>
+            </tr>
+            <tr>
+              <td>Assignment 2: The Piano</td>
+              <td>Grade: 10%</td>
+              <td>13/05/2017</td>
+              <td>Attempt</td>
+            </tr>
+            <tr>
+              <td>Assignment 1: Mozart</td>
+              <td>Grade: 8.45/10</td>
+              <td>Closed</td>
+              <td>View/Provide Feedback</td>
+            </tr>
+          </table>
+        </fieldset>
+
+        <!-- Move below to new HTML -->
         <!-- Assignment tab pane (Doing structured questions)-->
         <fieldset id="doing_assignment_tab_pane" class="tab">
           <legend>doing_assignment_tab_pane</legend>
@@ -176,7 +202,7 @@
               </p>
             </div>
 
-            <div class="col-sm-4"> <!-- USE FORM - onsubmit() function to check all answers etc -->
+            <div class="col-sm-4"> <!-- USE FORM and FIELDSET - onsubmit() function to check all answers etc -->
               <div id="questions" class="row tabbed">
                 <div id="question1" class="tab active-tab">
                   Q1
@@ -211,10 +237,6 @@
         </fieldset>
 
       </div>
-    </div>
-
-    <div class="col-sm-2">
-      <h2>RIGHT SIDEBAR</h2>
     </div>
   </div>
 </body>

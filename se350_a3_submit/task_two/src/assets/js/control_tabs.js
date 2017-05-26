@@ -53,11 +53,8 @@ function change_tab(el){
 
   if (tab_ref == "home"){
     $("#artSubjects").css( "visibility", "hidden" );
-    $("#ahTab").css( "visibility", "hidden" );
-    $("#cmTab").css( "visibility", "hidden" );
-    $("#sqTab").css( "visibility", "hidden" );
+    $("#tabbing-controls > *:not(#homeTab)").css( "visibility", "hidden" );
   }
-  removeAssignmentTabFromBreadCrumb();
 }
 
 function show_music_tab(){
@@ -77,11 +74,11 @@ function show_music_tab(){
   $("#cmTab").addClass("active")
   $("#sqTab").css( "visibility", "hidden" );
   $("#assignments").css( "visibility", "hidden" );
+  $("#assignmentTab").css( "visibility", "hidden" );
 }
 
 function make_tabs_non_active(){
   $(".tab-controls").removeClass("active");
-  removeAssignmentTabFromBreadCrumb();
 }
 
 function close_tab_panes(){
@@ -103,6 +100,7 @@ function ahTabButton(){
   $("#ahTab").css( "visibility", "visible" );
   $("#cmTab").css( "visibility", "hidden" );
   $("#sqTab").css( "visibility", "hidden" );
+  $("#assignmentTab").css( "visibility", "hidden" );
 }
 
 function sqTabButton(){
@@ -116,6 +114,8 @@ function sqTabButton(){
   $("#ahTab").css( "visibility", "visible" );
   $("#cmTab").css( "visibility", "visible" );
   $("#sqTab").css( "visibility", "visible" );
+  $("#assignmentTab").css( "visibility", "hidden" );
+
 }
 
 function createAssignment(option){
@@ -131,34 +131,17 @@ function createAssignment(option){
   switch(parseInt(option)){
     case 1:
       $("#doing_assignment_tab_pane, #pages").addClass("active-tab");
-      breadCrumbText += "Assignment 2";
       break;
     case 2:
       $("#view_feedback_assignment_tab_pane, #pages").addClass("active-tab");
-      breadCrumbText += "Assignment 1 Feedback";
       break;
     case 3:
-      $("#give_feedback_assignment_tab_pane, #pages").addClass("active-tab");
-      breadCrumbText += "Assignment 1 Review";
       break;
     default:
       console.log("No valid assignment tab pane: " + option)
   }
-
-  // Append assignment tab to breadcrumb
-  var tabbingControls = document.getElementById("tabbing-controls");
-  var newTabItem = document.createElement("li");
-  var newTabItemValue = document.createTextNode(breadCrumbText);
-
-  newTabItem.appendChild(newTabItemValue);
-  newTabItem.className += "active";
-  newTabItem.setAttribute("id", "assignment_tab"); // to remove later
-
-  tabbingControls.appendChild(newTabItem);
-}
-
-function removeAssignmentTabFromBreadCrumb(){
-  $('#assignment_tab').remove();
+  $("#assignmentTable, #pages").addClass("active-tab");
+  $("#assignmentTab").addClass("active");
 }
 
 function loadDoingAssignment(){
@@ -186,3 +169,9 @@ function change_question(el){
   $("#" + tab_group + " .active-tab").removeClass("active-tab")
   $("#" + tab_group + " #" + tab_ref).addClass("active-tab")
 }
+
+
+// DEBUGGING PURPOSES
+window.onload = function(){
+  createAssignment();
+};

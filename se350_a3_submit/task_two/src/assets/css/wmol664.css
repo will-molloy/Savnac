@@ -3,14 +3,15 @@
     width:49%;
     vertical-align:top;
 }
-html {
-    position:relative;
-    min-height: 100%;
+
+html{
+  position: relative;
 }
 html, body {
     margin: 0;
     padding: 0;
     font-size: 20px;
+    min-height: 100%;
 }
 
 /* tabbing.css - from DHTML tutorial */
@@ -35,7 +36,7 @@ html, body {
     min-height:60px;
 }
 
-#artSubjects, #ahTab, #cmTab, #sqTab, #assignments {
+#tabbing-controls > *:not(#homeTab), #artSubjects {
     text-align: left;
     visibility:hidden;
 }
@@ -56,4 +57,32 @@ html, body {
 /* Assignment page */
 .fixed-outline{
   position:fixed;
+}
+
+
+.nav .breadcrumb {
+    margin: 0 7px;
+}
+@media (min-width: 768px) {
+    .nav .breadcrumb {
+        float: left;
+        margin: 7px 10px;
+    }
+}
+
+table, td, th {
+  font-size:20pt;
+   border: 1px solid black;
+   text-align: left;
+   margin: 10px 10px 10px 10px;
+   padding: 0px 10px 0px 10px;
+}
+
+table {
+   border-collapse: collapse;
+}
+
+#nav ul {
+    display: inline-block;
+    list-style-type: none;
 }
