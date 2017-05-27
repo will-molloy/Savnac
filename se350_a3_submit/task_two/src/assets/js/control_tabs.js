@@ -174,6 +174,8 @@ function loadDoingAssignment(){
   $("#assignment2").addClass("active-tab");
   // Show structured questions image at top
   $("#assignment_tab_pane").addClass("active-tab");
+
+  change_question();
 }
 
 // Similar to tabbing.js (DHTML Tutorial) - change question for the sq assignment
