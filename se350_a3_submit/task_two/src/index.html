@@ -47,13 +47,12 @@
   <!-- Top nav bar -->
   <div class="nav-wrapper">
     <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Notifications</a></li>
-        <li><a href="#">Calendar</a></li>
-        <li><a href="#">Help</a></li>
-      </ul>
-      <div class="col-sm-3">
+      <div >
+        <ul class="nav navbar-nav">
+          <li><a href="#">BRAND</a></a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3" style="float:right">
         <form class="navbar-form" role="search">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
@@ -63,6 +62,11 @@
           </div>
         </form>
       </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Calendar</a></li>
+      </ul>
     </nav>
   </div>
 
@@ -71,7 +75,7 @@
 
     <!-- Center - fixed breadcrumb -->
     <!-- > 12 columns however this allows stuff to stick to the right if the screen is small -->
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-10 col-sm-offset-1">
       <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb list-inline" width="50%">
         <li id="homeTab" class="tab-controls active" data-ref="home" onclick="change_tab(this)">Home</li>
         <li id="ahTab" class="tab-controls" data-ref="art_history" onclick="ahTabButton()">Art History</li>
@@ -83,7 +87,7 @@
     </div>
 
     <!-- Scrollable page content -->
-    <div class="col-sm-10 col-sm-offset-2">
+    <div class="col-sm-10 col-sm-offset-1">
       <div id="pages" class="row tabbed" data-offset-top="200">
 
         <!-- Home tab -->
@@ -203,7 +207,7 @@
 
         <!-- Move below to new HTML -->
         <!-- Assignment tab pane (Doing structured questions)-->
-        <fieldset id="assignmentLandingPage" class="tab">
+        <fieldset id="assignmentLandingPage" class="tab container">
           <legend>assignmentLandingPage</legend>
           <h2 class="assignment_header">Assignment 2: Mozart</h2>
           <p>

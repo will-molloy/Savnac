@@ -15,6 +15,7 @@ html, body {
 }
 body{
   overflow-x:hidden; /* Prevent scroll from adding width */
+  margin:0 auto;
 }
 
 /* tabbing.css - from DHTML tutorial */
