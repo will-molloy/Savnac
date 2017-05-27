@@ -75,6 +75,7 @@ function show_music_tab(){
   $("#sqTab").css( "visibility", "hidden" );
   $("#assignments").css( "visibility", "hidden" );
   $("#assignmentTab").css( "visibility", "hidden" );
+  $("#specificAssignmentTab").css( "visibility", "hidden" );
 }
 
 function make_tabs_non_active(){
@@ -101,6 +102,7 @@ function ahTabButton(){
   $("#cmTab").css( "visibility", "hidden" );
   $("#sqTab").css( "visibility", "hidden" );
   $("#assignmentTab").css( "visibility", "hidden" );
+  $("#specificAssignmentTab").css( "visibility", "hidden" );
 }
 
 function sqTabButton(){
@@ -115,7 +117,7 @@ function sqTabButton(){
   $("#cmTab").css( "visibility", "visible" );
   $("#sqTab").css( "visibility", "visible" );
   $("#assignmentTab").css( "visibility", "hidden" );
-
+  $("#specificAssignmentTab").css( "visibility", "hidden" );
 }
 
 function createAssignment(){
@@ -129,6 +131,8 @@ function createAssignment(){
   // Load assignment table
   $("#assignmentTable, #pages").addClass("active-tab");
   $("#assignmentTab").addClass("active");
+
+  $("#specificAssignmentTab").css( "visibility", "hidden" );
 }
 
 function createAssignmentLandingPage(){
@@ -138,10 +142,29 @@ function createAssignmentLandingPage(){
 
   // Show structured questions image at top
   $("#assignment_tab_pane").addClass("active-tab");
-  $("#assignmentTab").addClass("active");
 
+  // Load assignment landing page tab-pane
   $("#assignmentLandingPage, #pages").addClass("active-tab");
 
+  // Show assignment2 in breadcrumb
+  $("#specificAssignmentTab").addClass("active");
+  $("#specificAssignmentTab").text("Assignment 2")
+}
+
+function assignmentFeedBackPage(){
+  close_tab_panes();
+  make_tabs_non_active();
+  show_all_tabs_in_breadcrumb();
+
+  // Show structured questions image at top
+  $("#assignment_tab_pane").addClass("active-tab");
+
+  // Load assignment 1 feedback page
+  // FEEDBACK LINK
+
+  // Show assignment2 in breadcrumb
+  $("#specificAssignmentTab").addClass("active");
+  $("#specificAssignmentTab").text("Assignment 1")
 }
 
 function loadDoingAssignment(){

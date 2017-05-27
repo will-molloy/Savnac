@@ -50,33 +50,30 @@
   <!-- lower page -->
   <div class="container-fluid">
 
-    <!-- Top nav bar and breadcrumb-->
+    <!-- Top nav bar -->
     <nav class="navbar navbar-inverse navbar-static-top" data-spy="affix" data-offset-top="200">
-      <div class="col-sm-8 col-sm-offset-2">
-
         <ul class="nav navbar-nav">
-
-          <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb list-inline" width="50%">
-            <li id="homeTab" class="tab-controls active" data-ref="home" onclick="change_tab(this)">Home</li>
-            <li id="ahTab" class="tab-controls" data-ref="art_history" onclick="ahTabButton()">Art History</li>
-            <li id="cmTab" class="tab-controls" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
-            <li id="sqTab" class="tab-controls" data-ref="structured_questions" onclick="sqTabButton()">Structured Questions</li>
-            <li id="assignmentTab" class="tab-controls">Assignments</li>
-          </ol>
-
           <li><a href="#">Profile</a></li>
           <li><a href="#">Notifications</a></li>
           <li><a href="#">Calendar</a></li>
-
         </ul>
-
-      </div>
     </nav>
 
-    <!-- Center - fixed breadcrumb and scrollable content -->
-    <div class="col-sm-8 col-sm-offset-2">
+    <!-- Center - fixed breadcrumb -->
+    <!-- > 12 columns however this allows stuff to stick to the right if the screen is small -->
+    <div class="col-sm-11 col-sm-offset-2">
+      <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb list-inline" width="50%">
+        <li id="homeTab" class="tab-controls active" data-ref="home" onclick="change_tab(this)">Home</li>
+        <li id="ahTab" class="tab-controls" data-ref="art_history" onclick="ahTabButton()">Art History</li>
+        <li id="cmTab" class="tab-controls" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
+        <li id="sqTab" class="tab-controls" data-ref="structured_questions" onclick="sqTabButton()">Structured Questions</li>
+        <li id="assignmentTab" onclick="createAssignment()" class="tab-controls">Assignments</li>
+        <li id="specificAssignmentTab" class="tab-controls">Assignment x</li>
+      </ol>
+    </div>
 
-      <!-- Scrollable page content -->
+    <!-- Scrollable page content -->
+    <div class="col-sm-10 col-sm-offset-2">
       <div id="pages" class="row tabbed" data-offset-top="200">
 
         <!-- Home tab -->
@@ -159,26 +156,27 @@
         <!-- Tab-pane with table of assignments -->
         <fieldset id="assignmentTable" class="tab container">
           <legend>
-            Assignments:
+            Current Assignments:
+          </legend>
+          <table frame="box" style="width:100%" class="assignment-table">
+            <tr>
+              <td colspan="2" style="width:100%" class="table-link" onclick="createAssignmentLandingPage()">Assignment 2: The Piano</td>
+            </tr>
+            <tr>
+              <td style="width:20%">Grade: -/10%</td>
+              <td >Due: 13-05-2017 11:59pm</td>
+            </tr>
+          </table>
+          <legend>
+            Past Assignments:
           </legend>
           <table style="width:100%" class="assignment-table">
             <tr>
-              <th>Title</th>
-              <th>Grade</th>
-              <th>Closing Date</th>
-              <th>Attempt/Feedback</th>
+              <td colspan="2" style="width:100%" class="table-link" onclick="assignmentFeedBackPage()">Assignment 1: Mozart</td>
             </tr>
             <tr>
-              <td>Assignment 2: The Piano</td>
-              <td>Grade: 10%</td>
-              <td>13/05/2017</td>
-              <td class="table-link" onclick="createAssignmentLandingPage()">Attempt Assignment</td>
-            </tr>
-            <tr>
-              <td>Assignment 1: Mozart</td>
-              <td>Grade: 8.45/10</td>
-              <td>Closed</td>
-              <td class="table-link">View/Provide Feedback</td>
+              <td style="width:20%">Grade: 8.45/10%</td>
+              <td >Due: 01-01-1970 10:00pm</td>
             </tr>
           </table>
         </fieldset>
@@ -186,7 +184,7 @@
         <!-- Move below to new HTML -->
         <!-- Assignment tab pane (Doing structured questions)-->
         <fieldset id="assignmentLandingPage" class="tab">
-          <legend>doing_assignment_tab_pane</legend>
+          <legend>assignmentLandingPage</legend>
           <h2 class="assignment_header">Assignment 2: Mozart</h2>
           <p>
             <b>Outline:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ipsum metus, vel accumsan magna blandit vel. Proin laoreet consequat tincidunt. Pellentesque id felis ut enim scelerisque malesuada vel eget leo. Curabitur maximus tellus eget leo laoreet, quis accumsan nisl ornare. Phasellus vitae volutpat odio. Aliquam volutpat hendrerit varius. Suspendisse gravida elit eu erat faucibus tincidunt. Sed a urna eget dolor tristique dictum condimentum non est. Donec ac diam nisi. Proin finibus sed felis ac sollicitudin. Sed molestie purus a ultrices laoreet. Nulla finibus, enim ac lobortis vulputate, mauris metus gravida elit, sit amet euismod sem leo id metus. Vivamus iaculis gravida nulla a fermentum.
@@ -197,7 +195,9 @@
           <button onclick="loadDoingAssignment()">Attempt</button>
         </fieldset>
 
+
         <div id="assignment2" class="tab container-fluid">
+          <legend>Assignment2 Form FILL ENTIRE WIDTH????</legend>
           <row>
             <div class="col-sm-4">
               <p>
