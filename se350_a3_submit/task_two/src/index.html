@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>350 a3</title>
+  <title>350 A3 wmol664</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,10 @@
   <meta name="author" content="Will Molloy">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/lib/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/wmol664.css">
   <link rel="stylesheet" href="assets/css/arrows.css">
   <link rel="stylesheet" href="assets/css/tabbing.css">
-
 
   <!-- JS -->
   <script src="assets/js/lib/jquery-3.2.1.min.js"></script>
@@ -26,42 +25,53 @@
 
 <body>
   <!-- upper page - image -->
-  <div class="container-fluid" style="background-color:#2196F3;color:#fff;height:200px;">
-    <div id="pages" class="row tabbed" data-offset-top="200">
+  <div id="pages" class="container-fluid row tabbed" style="background-color:#2196F3;color:#fff;height:200px;">
 
-      <!-- Classical Music tab -->
-      <fieldset id="home" class="tab active-tab">
-        <h1>Home</h1>
-      </fieldset>
+    <!-- Classical Music tab -->
+    <fieldset id="home" class="tab active-tab">
+      <h1>Home</h1>
+    </fieldset>
 
-      <!-- Classical Music tab -->
-      <fieldset id="classical_music" class="tab">
-        <h1>Classical Music</h1>
-      </fieldset>
+    <!-- Classical Music tab -->
+    <fieldset id="classical_music" class="tab">
+      <h1>Classical Music</h1>
+    </fieldset>
 
-      <!-- Structured Qs tab -->
-      <fieldset id="assignment_tab_pane" class="tab">
-        <h1>Assignments</h1>
-      </fieldset>
-    </div>
+    <!-- Structured Qs tab -->
+    <fieldset id="assignment_tab_pane" class="tab">
+      <h1>Assignments</h1>
+    </fieldset>
   </div>
-  <br>
+
+
+  <!-- Top nav bar -->
+  <div class="nav-wrapper">
+    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+      <div class="col-sm-3">
+        <form class="navbar-form" role="search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
 
   <!-- lower page -->
   <div class="container-fluid">
 
-    <!-- Top nav bar -->
-    <nav class="navbar navbar-inverse navbar-static-top" data-spy="affix" data-offset-top="200">
-        <ul class="nav navbar-nav">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Notifications</a></li>
-          <li><a href="#">Calendar</a></li>
-        </ul>
-    </nav>
-
     <!-- Center - fixed breadcrumb -->
     <!-- > 12 columns however this allows stuff to stick to the right if the screen is small -->
-    <div class="col-sm-11 col-sm-offset-2">
+    <div class="col-sm-8 col-sm-offset-2">
       <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb list-inline" width="50%">
         <li id="homeTab" class="tab-controls active" data-ref="home" onclick="change_tab(this)">Home</li>
         <li id="ahTab" class="tab-controls" data-ref="art_history" onclick="ahTabButton()">Art History</li>
@@ -79,7 +89,7 @@
         <!-- Home tab -->
         <fieldset id="home" class="tab active-tab">
           <row>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <h2 class="subject-header available-domain" onclick="showArtSubjects()">Art History</h2><br />
             </div>
             <div id="artSubjects">
@@ -112,6 +122,16 @@
           <row>
             <div class="col-sm-12">
               <h2 class="subject-header">Economics</h2><br />
+            </div>
+          </row>
+          <row>
+            <div class="col-sm-12">
+              <h2 class="subject-header">English</h2><br />
+            </div>
+          </row>
+          <row>
+            <div class="col-sm-12">
+              <h2 class="subject-header">Mathematics</h2><br />
             </div>
           </row>
           <row>

@@ -32,3 +32,9 @@ Change tabs with external button:
 	
 Breadcrumb inside nav bar:
 	https://stackoverflow.com/a/20271642
+	
+Prevent scroll bar from adding extra width:
+	https://stackoverflow.com/a/18548909
+	
+Nav search bar:
+	https://stackoverflow.com/a/18620303
