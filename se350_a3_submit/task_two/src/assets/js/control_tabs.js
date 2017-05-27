@@ -160,7 +160,7 @@ function assignmentFeedBackPage(){
   $("#assignment_tab_pane").addClass("active-tab");
 
   // Load assignment 1 feedback page
-  // FEEDBACK LINK
+  $("#assignment1List").addClass("active-tab");
 
   // Show assignment2 in breadcrumb
   $("#specificAssignmentTab").addClass("active");
@@ -172,8 +172,16 @@ function loadDoingAssignment(){
 
   // Show assignment2 tab pane
   $("#assignment2").addClass("active-tab");
+  $("#q1").addClass("active");
+  $("#q2").removeClass("active");
+  $("#q3").removeClass("active");
+
+  $("#questions > *").removeClass("active-tab");
+  $("#question1").addClass("active-tab");
+
   // Show structured questions image at top
   $("#assignment_tab_pane").addClass("active-tab");
+
 }
 
 // Similar to tabbing.js (DHTML Tutorial) - change question for the sq assignment
@@ -196,5 +204,7 @@ function change_question(el){
 
 // DEBUGGING PURPOSES
 window.onload = function(){
-  createAssignment();
+//  createAssignment(); // - assignment list
+//  loadDoingAssignment(); - A2
+ assignmentFeedBackPage(); // -A1
 };

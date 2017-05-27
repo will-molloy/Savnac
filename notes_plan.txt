@@ -38,3 +38,14 @@ Prevent scroll bar from adding extra width:
 	
 Nav search bar:
 	https://stackoverflow.com/a/18620303
+	
+Drag and drop:
+	https://www.w3schools.com/html/html5_draganddrop.asp
+	
+	
+Images:
+	Piano: https://pixabay.com/en/piano-music-score-music-sheet-1655558/
+	Mozart: https://pixabay.com/en/mozart-live-sculpture-salzburg-849566/
+	Guitar: https://pixabay.com/en/acoustic-guitar-guitar-instrument-149427/
+	Piano clip-art: https://pixabay.com/en/piano-grand-piano-baby-grand-piano-31357/
+	Bananas: https://pixabay.com/en/banana-bunch-fruit-food-bananas-25339/
