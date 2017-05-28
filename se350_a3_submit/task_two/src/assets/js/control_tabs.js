@@ -162,7 +162,7 @@ function assignmentFeedBackPage(){
   // Load assignment 1 feedback page
   $("#assignment1List").addClass("active-tab");
 
-  // Show assignment2 in breadcrumb
+  // Show assignment1 in breadcrumb
   $("#specificAssignmentTab").addClass("active");
   $("#specificAssignmentTab").text("Assignment 1")
 }
@@ -178,9 +178,6 @@ function loadDoingAssignment(){
 
   $("#questions > *").removeClass("active-tab");
   $("#question1").addClass("active-tab");
-
-  // Show structured questions image at top
-  $("#assignment_tab_pane").addClass("active-tab");
 
   change_question();
 }
@@ -200,6 +197,19 @@ function change_question(el){
 
   $("#" + tab_group + " .active-tab").removeClass("active-tab")
   $("#" + tab_group + " #" + tab_ref).addClass("active-tab")
+}
+
+function loadFeedBackPage(){
+  close_tab_panes();
+  make_tabs_non_active();
+  show_all_tabs_in_breadcrumb();
+
+  // Load assignment 1 feedback page
+  $("#feedbackPage").addClass("active-tab");
+
+  // Show assignment1 in breadcrumb
+  $("#specificAssignmentTab").addClass("active");
+  $("#specificAssignmentTab").text("Assignment 1")
 }
 
 // DEBUGGING PURPOSES
