@@ -15,5 +15,6 @@ function addComment(){
   // Add name tag above comment
   var nameTag = document.createElement("h3");
   nameTag.innerText = "You: ";
+  nameTag.className = "assignment-question";
   commentSection.insertBefore(nameTag, commentSection.firstChild);
 }

@@ -7,6 +7,19 @@
   --brightdark:#288FF2;
 }
 
+.brand{
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-weight:bold;
+  font-size: 30pt;
+  margin-left:5%;
+  color:var(--brightlight);
+}
+
+.brand:hover{
+  cursor:pointer;
+  color:#fff;
+}
+
 .two-wide > * {
   display:inline-block;
   width:49%;
@@ -62,76 +75,6 @@ body{
   text-decoration: underline;
 }
 
-/* Assignment tables */
-table, td, th {
-  font-size:16pt;
-  text-align: left;
-  margin: 0px 0px 20px 0px;
-  padding: 10px 10px 10px 10px;
-}
-
-.assignment-table {
-  border-collapse: collapse;
-  border: 1px solid black;
-}
-td,th {
-  border:none;
-}
-
-.table-link {
-  text-decoration: underline;
-  font-size:24pt;
-}
-
-textarea {
-  border:1px solid #999999;
-  width:100%;
-  margin:5px 0;
-  padding:3px;
-  height:200px;
-  box-sizing: border-box;
-}
-
-#feedbackQAnswer, #commentInput {
-  height:100px;
-}
-
-.mcq {
-  margin-left: 40px;
-}
-
-.radio {
-  float: left;
-}
-
-#imagesDiv, #imagesBox {
-  float: left;
-  width: 120px;
-  height: 120px;
-  margin: 10px;
-  padding: 10px;
-}
-
-#imagesBox {
-  margin-left: 150px;
-  margin-right: 150px;
-  border: 1px solid black;
-}
-
-#imagesRow > li {
-  white-space: nowrap;
-  list-style: none;
-  display: inline;
-}
-
-#text_and_questions {
-  height:100%;
-}
-
-.end-of-page-table {
-  margin-bottom:100px;
-}
-
 /* Modals */
 /* The Modal (background) */
 .modal {
@@ -178,7 +121,7 @@ textarea {
   position:relative;
   left: -25px;
   top: 0px;
-  z-index: 50;
+  z-index: 12;
 }
 
 .navbar{
@@ -244,6 +187,7 @@ textarea {
   border:1px solid #fff;
   border-radius:6px;
   padding-top:10px;
+  margin-bottom:100px;
 }
 
 #artSubjectsList{
@@ -284,6 +228,168 @@ textarea {
 .tab-controls.active:hover{
   color:var(--dark2); /* same as non hover - don't want an effect */
 }
+
+/* Assignment page onwards */
+.legend-divider{
+  border-bottom:1px solid var(--light);
+  margin-bottom:20px;
+  color:var(--dark);
+}
+
+/* Assignment tables */
+table, td, th {
+  font-size:16pt;
+  margin: 0px 0px 20px 0px;
+  padding: 10px 10px 10px 10px;
+}
+
+.assignment-table {
+  border-collapse: collapse;
+  border: 1px solid var(--light);
+  color:var(--dark);
+}
+td,th {
+  border:none;
+}
+
+.table-link, .table-no-link {
+  text-decoration: underline;
+  font-size:24pt;
+}
+
+.table-link:hover {
+  cursor:pointer;
+  color:var(--brightdark);
+}
+
+textarea {
+  border:1px solid var(--dark);
+  width:100%;
+  margin:5px 0;
+  padding:3px;
+  height:200px;
+  box-sizing: border-box;
+  resize:none;
+}
+
+/* A2 */
+.assignment-header, .assignment-brief, .attempt-assignment-table td,
+.assignment-question, .assignment-question-label, #imagesBox,
+.available-domain, .available-subdomain, #artSubjects, .btn{
+  color:var(--dark);
+}
+
+.assignment-header {
+  font-size:24pt;
+  border-bottom:1px solid var(--light);
+}
+
+.assignment-brief{
+  font-size:12pt;
+}
+
+.attempt-assignment-table{
+  margin-top:20px;
+  border-top:1px solid var(--light);
+}
+
+.attempt-assignment-table td, .assignment-question{
+  font-size:16pt;
+}
+
+.assignment-question-label{
+  font-weight:bold;
+  font-size:18pt;
+}
+
+.mcq-label{
+  font-weight:normal;
+}
+
+.mcq-label:hover, btn:hover{
+  cursor:pointer;
+  color:var(--brightdark);
+}
+
+#questionsleftside, #a2brief{
+  margin-right:40px;
+}
+
+#question1, #question2, #question3, #questionsleftside, #feedbackPage{
+  margin-bottom:40px;
+}
+
+#feedbackQAnswer, #commentInput {
+  height:100px;
+}
+
+.mcq {
+  margin-left: 40px;
+}
+
+.radio {
+  float: left;
+}
+
+.btn {
+  font-size: 14pt;
+}
+
+#imagesDiv, #imagesBox {
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  padding: 10px;
+}
+
+#imagesBox {
+  margin-left: 150px;
+  margin-right: 150px;
+  border: 1px solid var(--dark);
+}
+
+#imagesRow > li {
+  white-space: nowrap;
+  list-style: none;
+  display: inline;
+}
+
+#question-tab-controls li {
+  font-size:14pt;
+  min-width:50px;
+  padding: 10px 10px 10px 10px;
+}
+
+#text_and_questions {
+  height:100%;
+}
+
+#question-tab-controls li:not(:first-of-type){
+  text-decoration: underline;
+}
+
+#table-head-row{
+  border-bottom: 1px solid var(--light);
+}
+
+#comment-section textarea{
+  border-bottom:1px solid black;
+}
+
+.btn-secondary:hover{
+  color:var(--brightdark);
+}
+
+.table-row-link:hover {
+  cursor:pointer;
+  background:var(--brightlight);
+}
+
+.end-of-page-table {
+  margin-bottom:100px;
+}
+
 
 body{
   background-color:var(--brightlight);

@@ -34,10 +34,11 @@
     <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="0">
       <div >
         <ul class="nav navbar-nav">
-          <li><a href="#">SAVNAC</a></a></li>
+          <li class="brand" onclick="createAssignment()">Savnac</li>
         </ul>
       </div>
       <ul class="nav navbar-nav navbar-right" style="margin-right:5%">
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <span class="glyphicon glyphicon-user pull-right"></span></a>
           <ul class="dropdown-menu">
@@ -69,7 +70,7 @@
   <div class="container-fluid">
 
     <!-- Center  -->
-    <div id="center-content" class="col-sm-11 col-lg-10 col-lg-offset-1">
+    <div id="center-content" class="col-sm-12 col-lg-10 col-lg-offset-1">
       <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb list-inline" width="50%">
         <li id="homeTab" class="tab-controls active" data-ref="home" onclick="change_tab(this)">Home</li>
         <li id="ahTab" class="tab-controls" data-ref="art_history" onclick="ahTabButton()">Art History</li>
@@ -84,28 +85,28 @@
 
         <!-- Home tab -->
         <fieldset id="home" class="tab active-tab container">
-            <row>
+          <h4 class="legend-divider">Subject List</h4>
+          <row>
+            <div class="col-sm-3">
+              <h2 class="subject-header available-domain" onclick="showArtSubjects()">Art History</h2><br />
+            </div>
+            <div id="artSubjects">
               <div class="col-sm-3">
-                <h2 class="subject-header available-domain" onclick="showArtSubjects()">Art History</h2><br />
+                <ul class="list-unstyled">
+                  <li>Art Revolution</li>
+                  <li>Museums</li>
+                  <li>Shakespere</li>
+                </ul>
               </div>
-              <div id="artSubjects">
-                <div class="col-sm-3">
-                  <ul class="list-unstyled">
-                    <li>Art Revolution</li>
-                    <li>Museums</li>
-                    <li>Shakespere</li>
-                  </ul>
-                </div>
-                <div class="col-sm-3">
-                  <ul class="list-unstyled" data-tabref="pages">
-                    <li class="available-subdomain" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
-                    <li>Renaissance</li>
-                    <li>Tudors</li>
-                  </ul>
-                </div>
+              <div class="col-sm-3">
+                <ul class="list-unstyled" data-tabref="pages">
+                  <li class="available-subdomain" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
+                  <li>Renaissance</li>
+                  <li>Tudors</li>
+                </ul>
               </div>
-            </row>
-
+            </div>
+          </row>
           <row>
             <div class="col-sm-12">
               <h2 class="subject-header">Biology</h2><br />
@@ -145,8 +146,9 @@
 
         <!-- Classical Music tab -->
         <fieldset id="classical_music" class="tab container">
+          <h4 class="legend-divider">Classical Music</h4>
           <row>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
               <h2 class="subject-header available-domain" onclick="showAssignments()">Structured Questions</h2><br />
             </div>
             <div class="col-sm-6" id="assignments">
@@ -172,45 +174,54 @@
 
         <!-- Tab-pane with table of assignments -->
         <fieldset id="assignmentTable" class="tab container">
-          <legend>
-            Current Assignments:
-          </legend>
-          <table frame="box" style="width:100%" class="assignment-table">
+          <h4 class="legend-divider">Current Assignments:</h4>
+          <table frame="box" style="width:100%" class="assignment-table table-row-link" onclick="createAssignmentLandingPage()" >
             <tr>
-              <td colspan="2" style="width:100%" class="table-link" onclick="createAssignmentLandingPage()">Assignment 2: The Piano</td>
+              <td colspan="2" style="width:100%" class="table-no-link">Assignment 2: The Piano</td>
             </tr>
             <tr>
               <td style="width:20%">Grade: -/10%</td>
               <td >Due: 13-05-2017 11:59pm</td>
             </tr>
           </table>
-          <legend>
-            Past Assignments:
-          </legend>
-          <table frame="box" style="width:100%" class="assignment-table">
+
+          <h4 class="legend-divider">Past Assignments:</h4>
+
+          <table frame="box" style="width:100%" class="assignment-table table-row-link" onclick="assignmentFeedBackPage()">
             <tr>
-              <td colspan="2" style="width:100%" class="table-link" onclick="assignmentFeedBackPage()">Assignment 1: Mozart</td>
+              <td colspan="2" style="width:100%" class="table-no-link">Assignment 1: Mozart</td>
             </tr>
             <tr>
               <td style="width:20%">Grade: 8.5/10%</td>
               <td >Due: 01-01-1970 10:00pm</td>
             </tr>
           </table>
+          <table frame="box" style="width:100%" class="assignment-table">
+            <tr>
+              <td colspan="2" style="width:100%" class="table-no-link">Lab Exercises</td>
+            </tr>
+            <tr>
+              <td style="width:20%">Grade: 4/4%</td>
+              <td >Due: 01-01-1970 00:00am</td>
+            </tr>
+          </table>
         </fieldset>
 
-        <!-- Assignment tab pane (list of assignments) -->
+        <!-- Assignment tab pane (asignment landing page) -->
         <fieldset id="assignmentLandingPage" class="tab container">
-          <h2 class="assignment_header">Assignment 2: The Piano</h2><br />
+          <h2 class="assignment-header">Assignment 2: The Piano</h2>
           <img title="Piano and Sheet Music" src="assets/img/piano-1655558_1280.jpg" style="width:500px;height:300px;padding-left:20px" align="right" />
-          <p>
+          <p class="assignment-brief">
             This text is a brief set by the students teacher and will aid them in completing the following set of questions.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros velit, feugiat euismod mauris ac, sodales dictum enim. Mauris consequat sapien eu augue dapibus aliquam sed sit amet dui. Etiam eget massa tincidunt, molestie nunc et, efficitur neque. Vestibulum sodales sem est, ac accumsan purus mollis id. Donec non aliquet dui. Aliquam eget quam blandit, consectetur nulla placerat, scelerisque libero. Sed a nibh vitae massa fringilla finibus at a massa. Pellentesque sollicitudin arcu vitae sapien molestie, eu dapibus purus venenatis. Vivamus faucibus est et scelerisque tincidunt. Mauris consequat sollicitudin nisi, ac bibendum mi ullamcorper a. Nulla blandit cursus nulla vel ornare. Donec laoreet erat viverra pellentesque lobortis.
-          </p><br />
-          <table width="100%" align="left" >
+          </p><p class="assignment-brief">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros velit, feugiat euismod mauris ac, sodales dictum enim. Mauris consequat sapien eu augue dapibus aliquam sed sit amet dui. Etiam eget massa tincidunt, molestie nunc et, efficitur neque. Vestibulum sodales sem est, ac accumsan purus mollis id. Donec non aliquet dui. Aliquam eget quam blandit, consectetur nulla placerat, scelerisque libero. Sed a nibh vitae massa fringilla finibus at a massa. Pellentesque sollicitudin arcu vitae sapien molestie, eu dapibus purus venenatis. Vivamus faucibus est et scelerisque tincidunt. Mauris consequat sollicitudin nisi, ac bibendum mi ullamcorper a. Nulla blandit cursus nulla vel ornare. Donec laoreet erat viverra pellentesque lobortis.
+          </p>
+          <table class="attempt-assignment-table" width="100%" align="left" >
             <tr>
-              <td style="padding-left:0px" width="30%">Number of Questions: 3</td>
-              <td width="30%">Attempts: Unlimited</td>
-              <td width="30%"><button onclick="loadDoingAssignment()">Attempt</button></td>
+              <td>Questions: 3</td>
+              <td>Attempts: Unlimited</td>
+              <td><button class="btn btn-secondary" onclick="loadDoingAssignment()">Attempt</button></td>
             </tr>
           </table>
         </fieldset>
@@ -219,11 +230,14 @@
         <div id="assignment2" class="tab container">
           <row id="text_and_questions">
             <div id="text_and_questions">
-              <div class="col-sm-6">
-                <p>
+              <div id="questionsleftside" class="col-sm-5">
+                <h3 class="legend-divider">Assignment 2: The Piano</h3>
+                <p class="assignment-brief">
                   This text will remain static while the user cycles through questions. This text is a brief set by the students teacher and will aid them in completing the questions.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros velit, feugiat euismod mauris ac, sodales dictum enim. Mauris consequat sapien eu augue dapibus aliquam sed sit amet dui. Etiam eget massa tincidunt, molestie nunc et, efficitur neque. Vestibulum sodales sem est, ac accumsan purus mollis id. Donec non aliquet dui. Aliquam eget quam blandit, consectetur nulla placerat, scelerisque libero. Sed a nibh vitae massa fringilla finibus at a massa. Pellentesque sollicitudin arcu vitae sapien molestie, eu dapibus purus venenatis. Vivamus faucibus est et scelerisque tincidunt. Mauris consequat sollicitudin nisi, ac bibendum mi ullamcorper a. Nulla blandit cursus nulla vel ornare. Donec laoreet erat viverra pellentesque lobortis.
-                </p><br />
+                </p><p class="assignment-brief">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros velit, feugiat euismod mauris ac, sodales dictum enim. Mauris consequat sapien eu augue dapibus aliquam sed sit amet dui. Etiam eget massa tincidunt, molestie nunc et, efficitur neque. Vestibulum sodales sem est, ac accumsan purus mollis id. Donec non aliquet dui. Aliquam eget quam blandit, consectetur nulla placerat, scelerisque libero. Sed a nibh vitae massa fringilla finibus at a massa. Pellentesque sollicitudin arcu vitae sapien molestie, eu dapibus purus venenatis. Vivamus faucibus est et scelerisque tincidunt. Mauris consequat sollicitudin nisi, ac bibendum mi ullamcorper a. Nulla blandit cursus nulla vel ornare. Donec laoreet erat viverra pellentesque lobortis.
+                </p>
               </div>
 
               <!-- Question section -->
@@ -231,34 +245,41 @@
 
                 <!-- Q1 Text area -->
                 <fieldset id="question1" class="tab active-tab">
-                  <legend>Question 1</legend>
-                  <p>This is a question based on the text to the left you must attempt all questions before submitting.</p>
-                  <label for="question_1">Answer: </label>
+                  <h3 class="legend-divider assignment-question-label">Question 1</h3>
+                  <p class="assignment-question">This is a question based on the text to the left you must attempt all questions before submitting.</p>
+                  <label class="assignment-question-label" for="question_1">Answer: </label>
                   <textarea name="question_1"></textarea>
                 </fieldset>
 
                 <!-- Q2 MCQ -->
                 <fieldset id="question2" class="tab">
-                  <legend>Question 2</legend>
-                  <p>A multichoice question based on the text to the left.</p>
-                  <label class="mcq" label for="question_2"> Choose one:</label>
-                  <div class = "mcq">
-                    <input type="radio" name="q2" value="A"> It must be the first option.<br>
-                    <input type="radio" name="q2" value="B"> Statistically B is the best choice. <br>
-                    <input type="radio" name="q2" value="C"> C is always the answer. <br>
-                    <input type="radio" name="q2" value="D"> No, it must be the last option.
+                  <h3 class="legend-divider assignment-question-label">Question 2</h3>
+                  <p class="assignment-question">A multichoice question based on the text to the left.</p>
+                  <label class="mcq assignment-question-label" label for="question_2"> Choose one:</label>
+                  <div class="mcq assignment-question">
+                    <input id="mcqA" type="radio" name="q2" value="A">
+                    <label class="mcq-label" for="mcqA"> It must be the first option.</label><br>
+
+                    <input id="mcqB" type="radio" name="q2" value="B">
+                    <label class="mcq-label" for="mcqB"> Statistically B is the best choice. </label><br>
+
+                    <input id="mcqC" type="radio" name="q2" value="C">
+                    <label class="mcq-label" for="mcqC"> C is always the answer.</label><br>
+
+                    <input id="mcqD" type="radio" name="q2" value="D">
+                    <label class="mcq-label" for="mcqD"> No, it must be the last option.</label><br>
                   </div>
                 </fieldset>
 
                 <!-- Q3 Drag and drop -->
                 <fieldset id="question3" class="tab">
-                  <legend>Question 3</legend>
-                  <p>Drag the piano into the box.</p>
+                  <h3 class="legend-divider assignment-question-label">Question 3</h3>
+                  <p class="assignment-question-label">Drag the piano into the box:</p>
                   <div id="imagesBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                   <div id="imagesRow">
                     <li><div id="imagesDiv" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="assets/img/acoustic-guitar-149427_640.png" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="100"></div></li>
                     <li><div id="imagesDiv" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="assets/img/piano-31357_640.png" draggable="true" ondragstart="drag(event)" id="drag2" width="100" height="100"></div></li>
-                    <li><div id="imagesDiv" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="assets/img/banana-25339_640.png" draggable="true" ondragstart="drag(event)" id="drag3" width="100" height="100"></div></li>
+                    <li><div id="imagesDiv" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="assets/img/violin-33610_640.png" draggable="true" ondragstart="drag(event)" id="drag3" width="100" height="100"></div></li>
                   </div>
                 </fieldset>
               </form>
@@ -266,13 +287,13 @@
           </row>
           <row>
             <!-- Questions nav control -->
-            <ul id="question-tab-controls" data-tabref="questions" align="center">
+            <ul id="question-tab-controls" class="list-inline" data-tabref="questions" align="center">
               <!-- first one  isnt active/?? -->
-              <li class="btn tab-controls">Question:</li>
+              <li class="assignment-question">Question:</li>
               <li id="q1" class="btn tab-controls active" data-ref="question1" onclick="change_question(this)">1</li>
               <li id="q2" class="btn tab-controls" data-ref="question2" onclick="change_question(this)">2</li>
               <li id="q3" class="btn tab-controls" data-ref="question3" onclick="change_question(this)">3</li>
-              <li id="submitBtn" class="btn tab-controls" onclick="submitA2()">Submit</li>
+              <li id="submitBtn" class="tab-controls" onclick="submitA2()"><button class="btn btn-secondary">Submit</button></li>
             </ul>
           </row>
         </div>
@@ -281,87 +302,95 @@
         <div id="submitModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Submitted!</h2>
-            <p>Come back on 13-05-2017 for peer review.</p>
-            <button id="backToAssignments">Back to Assignments.</button>
+            <h2 class="assignment-question-label">Submitted!</h2>
+            <p class="assignment-question">Come back on 13-05-2017 for peer review.</p>
+            <button class="btn btn-secondary" id="backToAssignments">Back to Assignments.</button>
           </div>
         </div>
 
         <!-- Assignment 1 tab-pane - viewing others assignments and feedback comments -->
         <div id="assignment1List" class="tab container">
-          <h2 class="assignment_header">Assignment 1: Mozart</h2><br />
+          <h2 class="legend-divider assignment-header">Assignment 1: Mozart</h2>
           <img title="Mozart sculpture, Salzburg Austria" src="assets/img/mozart-849566_1280.jpg" style="width:500px;height:300px;padding-left:20px" align="right" />
-          <p>
+          <p class="assignment-brief">
             This text is a brief set by the students teacher for the assignment they were set in the past.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros velit, feugiat euismod mauris ac, sodales dictum enim. Mauris consequat sapien eu augue dapibus aliquam sed sit amet dui. Etiam eget massa tincidunt, molestie nunc et, efficitur neque. Vestibulum sodales sem est, ac accumsan purus mollis id. Donec non aliquet dui. Aliquam eget quam blandit, consectetur nulla placerat, scelerisque libero. Sed a nibh vitae massa fringilla finibus at a massa. Pellentesque sollicitudin arcu vitae sapien molestie, eu dapibus purus venenatis. Vivamus faucibus est et scelerisque tincidunt. Mauris consequat sollicitudin nisi, ac bibendum mi ullamcorper a. Nulla blandit cursus nulla vel ornare. Donec laoreet erat viverra pellentesque lobortis.
-          </p><br />
-          <legend>Your Submission:</legend>
-          <table frame="box" style="width:80%" class="assignment-table">
-            <tr>
-              <td>Grade: 8.5%</td>
-              <td onclick="loadFeedBackPage()">View Feedback</td>
+          </p><p class="assignment-brief">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros velit, feugiat euismod mauris ac, sodales dictum enim. Mauris consequat sapien eu augue dapibus aliquam sed sit amet dui. Etiam eget massa tincidunt, molestie nunc et, efficitur neque. Vestibulum sodales sem est, ac accumsan purus mollis id. Donec non aliquet dui. Aliquam eget quam blandit, consectetur nulla placerat, scelerisque libero. Sed a nibh vitae massa fringilla finibus at a massa. Pellentesque sollicitudin arcu vitae sapien molestie, eu dapibus purus venenatis. Vivamus faucibus est et scelerisque tincidunt. Mauris consequat sollicitudin nisi, ac bibendum mi ullamcorper a. Nulla blandit cursus nulla vel ornare. Donec laoreet erat viverra pellentesque lobortis.
+          </p>
+          <h3 class="legend-divider">Your Submission:</h3>
+          <table frame="box" style="width:100%" class="assignment-table">
+            <tr class="table-row-link" onclick="loadFeedBackPage()">
+              <td><b>Grade:</b> 8.5%</td>
+              <td><b>Comments:</b> 2</td>
+              <td>View Feedback</td>
             </tr>
           </table>
-          <legend>Peer Group Submissions:</legend>
-          <table frame="box" style="width:80%" class="assignment-table end-of-page-table">
-            <tr>
+          <h3 class="legend-divider">Peer Group Submissions:</h3>
+          <table frame="box" style="width:100%" class="assignment-table">
+            <tr id="table-head-row">
               <th>Name:</th>
               <th>Grade:</th>
+              <th>Comments:</th>
               <th></th>
             </tr>
-            <tr>
+            <tr class="table-row-link" onclick="loadFeedBackPage()">
               <td>Paul</td>
-              <td>8.0%</td>
-              <td onclick="loadFeedBackPage()">Review</td>
+              <td >8.0%</td>
+              <td>12</td>
+              <td>Review</td>
             </tr>
-            <tr>
+            <tr class="table-row-link" onclick="loadFeedBackPage()">
               <td>Helen</td>
-              <td>10.0%</td>
-              <td onclick="loadFeedBackPage()">Review</td>
+              <td >10.0%</td>
+              <td>9</td>
+              <td>Review</td>
             </tr>
-            <tr>
+            <tr class="table-row-link" onclick="loadFeedBackPage()">
               <td>Mark</td>
-              <td>6.4%</td>
-              <td onclick="loadFeedBackPage()">Review</td>
+              <td >6.4%</td>
+              <td>7</td>
+              <td>Review</td>
             </tr>
-            <tr>
+            <tr class="table-row-link" onclick="loadFeedBackPage()">
               <td>Vivian</td>
-              <td>7.8%</td>
-              <td onclick="loadFeedBackPage()">Review</td>
+              <td >7.8%</td>
+              <td >3</td>
+              <td>Review</td>
             </tr>
           </table>
         </div> <!-- close A1 list (feedback system) -->
 
         <div id="feedbackPage" class="tab container">
-          <legend>Feedbacks</legend>
+          <h3 class="legend-divider">Assignment 1: Mozart (Review)</h3>
           <row>
 
             <!-- Brief, question and answer -->
-            <div class="col-sm-6">
-              <p>
+            <div id="a2brief" class="col-sm-5">
+              <p class="assignment-brief">
                 This text is a brief set by the students teacher for the assignment they were set in the past.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros velit, feugiat euismod mauris ac, sodales dictum enim. Mauris consequat sapien eu augue dapibus aliquam sed sit amet dui. Etiam eget massa tincidunt, molestie nunc et, efficitur neque. Vestibulum sodales sem est, ac accumsan purus mollis id. Donec non aliquet dui. Aliquam eget quam blandit, consectetur nulla placerat, scelerisque libero. Sed a nibh vitae massa fringilla finibus at a massa. Pellentesque sollicitudin arcu vitae sapien molestie, eu dapibus purus venenatis. Vivamus faucibus est et scelerisque tincidunt. Mauris consequat sollicitudin nisi, ac bibendum mi ullamcorper a. Nulla blandit cursus nulla vel ornare. Donec laoreet erat viverra pellentesque lobortis.
-              </p><br />
+              </p>
               <fieldset id="question1" class="tab active-tab">
-                <legend>Question: </legend>
-                <p>This is a question based on the text above; there is only question for this assignment.</p>
-                <label for="feedbackQ">Answer: </label>
+                <h3 class="legend-divider assignment-question-label">Question: </h3>
+                <p class="assignment-question">This is a question based on the text above; there is only one question for this assignment.</p>
+                <label class="assignment-question-label" for="feedbackQ">Answer: </label>
                 <textarea readonly name="feedbackQ" id="feedbackQAnswer">This is the students answer to the above question.</textarea>
-                <button onclick="assignmentFeedBackPage()">Back to Assignment Page</button>
+                <button class="btn btn-secondary"  onclick="assignmentFeedBackPage()">Back to Assignment Page</button>
               </fieldset>
             </div>
 
             <!-- Comment section -->
             <div class="col-sm-6">
-              <h3 id="numComments">Comments: 2</h3>
+              <h3 class="assignment-question" id="numComments">Comments: 2</h3>
               <textarea id="commentInput" type="text" placeholder="Add a comment, the creator of the assignment will receive a notification when you do so." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Add a comment, the creator of the assignment will receive a notification when you do so.'"></textarea>
-              <button onclick="addComment()">Comment</button>
+              <button class="btn btn-secondary" onclick="addComment()">Comment</button>
 
               <div id="comment-section">
-                <h3>Vivian:</h3>
+                <h3 class="assignment-question">Vivian:</h3>
                 <textarea readonly id="feedbackQAnswer">This is a feedback comment made by a member of the peer group.</textarea>
-                <h3>Mark:</h3>
-                <textarea readonly id="feedbackQAnswer">This is a feedback comment made by a member of the peer group.</textarea>
+                <h3 class="assignment-question">Mark:</h3>
+                <textarea class="legend-divider" eadonly id="feedbackQAnswer">This is a feedback comment made by a member of the peer group.</textarea>
               </div>
 
             </div>
