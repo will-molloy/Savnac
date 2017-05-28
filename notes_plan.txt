@@ -42,6 +42,8 @@ Nav search bar:
 Drag and drop:
 	https://www.w3schools.com/html/html5_draganddrop.asp
 	
+Modal box:
+	https://www.w3schools.com/howto/howto_css_modals.asp
 	
 Images:
 	Piano: https://pixabay.com/en/piano-music-score-music-sheet-1655558/

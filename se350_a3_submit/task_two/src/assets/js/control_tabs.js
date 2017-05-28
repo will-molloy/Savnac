@@ -202,10 +202,9 @@ function change_question(el){
   $("#" + tab_group + " #" + tab_ref).addClass("active-tab")
 }
 
-
 // DEBUGGING PURPOSES
 window.onload = function(){
-//  createAssignment(); // - assignment list
-//  loadDoingAssignment(); - A2
- assignmentFeedBackPage(); // -A1
+  createAssignment(); // - assignment list
+//  loadDoingAssignment();// - A2
+// assignmentFeedBackPage(); // -A1
 };

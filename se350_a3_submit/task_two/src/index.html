@@ -22,6 +22,7 @@
   <script src="assets/js/control_tabs.js"></script>
   <script src="assets/js/control_assignments.js"></script>
   <script src="assets/js/drag_and_drop.js"></script>
+  <script src="assets/js/control_modal.js"></script>
 </head>
 
 <body>
@@ -233,7 +234,7 @@
                 </p><br />
               </div>
               <!-- Question section -->
-              <form id="questions"  class="submission-form two-wide tabbed" onsubmit="submit_function(this)">
+              <form id="questions"  class="submission-form two-wide tabbed">
                 <fieldset id="question1" class="tab active-tab">
                   <legend>Question 1</legend>
                   <p>This is a question based on the text to the left you must attempt all questions before submitting.</p>
@@ -276,6 +277,16 @@
               <li id="submitBtn" class="btn tab-controls" onclick="submitA2()">Submit</li>
             </ul>
           </row>
+        </div>
+
+        <!-- Submit modal -->
+        <div id="submitModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Submitted!</h2>
+            <p>Come back on 13-05-2017 for peer review.</p>
+            <button id="backToAssignments">Back to Assignments.</button>
+          </div>
         </div>
 
         <!-- Assignment 1 tab-pane - viewing others assignments and feedback comments -->
