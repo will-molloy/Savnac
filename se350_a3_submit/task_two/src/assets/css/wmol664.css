@@ -1,3 +1,12 @@
+:root  {
+  --dark:#032546;
+  --dark2:#06335E;
+  --light2:#1B5389;
+  --light:#366593;
+  --brightlight:#F3F9FE;
+  --brightdark:#288FF2;
+}
+
 .two-wide > * {
   display:inline-block;
   width:49%;
@@ -20,7 +29,7 @@ body{
 
 /* tabbing.css - from DHTML tutorial */
 .tabbed > *{
-  height:500px;
+  min-height:600px;
 }
 .tabbed .tab{
   display:none;
@@ -167,7 +176,116 @@ textarea {
 .badge-notify{
   background:red;
   position:relative;
-  left: 45px;
-  top: -10px;
+  left: -25px;
+  top: 0px;
   z-index: 50;
+}
+
+.navbar{
+  background: var(--dark);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* nav search */
+#srch-term{
+  font-size:12pt;
+  width:200px;
+  height:34px;
+}
+/* Nav dropdown */
+.dropdown {
+  background:#fff;
+  border:1px solid var(--dark);
+  border-radius:4px;
+  width:200px;
+  margin-top:8px;
+  margin-left:40px;
+  height:34px;
+  font-size:12pt;
+}
+.dropdown-toggle{
+  margin-top:-10px;
+}
+.dropdown-menu>li>a {
+  color: var(--dark2);
+}
+.dropdown ul.dropdown-menu {
+  margin-top:10px;
+  width:300px;
+}
+.dropdown ul.dropdown-menu:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  z-index: 10;
+}
+.dropdown ul.dropdown-menu:after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  z-index: 9;
+}
+.dropdown:hover{
+  background-color: var(--light);
+  background-image: none;
+}
+.dropdown-menu > li > a:hover {
+  background:#fff;
+  color: var(--light);
+  cursor:pointer;
+}
+
+/* Styling */
+#pages{
+  background-color:#fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border:1px solid #fff;
+  border-radius:6px;
+  padding-top:10px;
+}
+
+#artSubjectsList{
+  margin:top:4px;
+  list-style-type: none;
+}
+
+.subject-header, .subject-list{
+  border-bottom:1px solid var(--light);
+  color:var(--dark);
+}
+
+.available-domain:hover, .available-subdomain:hover{
+  color:var(--brightdark);
+}
+
+.breadcrumb {
+  background-color:var(--brightlight);
+}
+
+.tab-controls, .available-domain, .available-subdomain{
+  cursor:pointer;
+}
+
+.tab-controls{
+  color:var(--light);
+}
+
+.tab-controls.active{
+  cursor:default;
+  color:var(--dark2);
+}
+
+.tab-controls:hover{
+  color:var(--brightdark);
+}
+
+.tab-controls.active:hover{
+  color:var(--dark2); /* same as non hover - don't want an effect */
+}
+
+body{
+  background-color:var(--brightlight);
+  font-family: sans-serif;
 }

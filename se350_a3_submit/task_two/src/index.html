@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/css/arrows.css">
   <link rel="stylesheet" href="assets/css/tabbing.css">
 
+
   <!-- JS -->
   <script src="assets/js/lib/jquery-3.2.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
@@ -33,27 +34,33 @@
     <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="0">
       <div >
         <ul class="nav navbar-nav">
-          <li><a href="#">BRAND</a></a></li>
+          <li><a href="#">SAVNAC</a></a></li>
         </ul>
       </div>
-      <div class="col-sm-3" style="float:right">
-        <form class="navbar-form" role="search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <button class="btn btn-default btn btn-link" style="font-size:22px;">
-          <span class="glyphicon glyphicon-user">Profile</span>
-        </button>
+      <ul class="nav navbar-nav navbar-right" style="margin-right:5%">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <span class="glyphicon glyphicon-user pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>View Profile <span class="glyphicon glyphicon-user pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a>Grades <span class="glyphicon glyphicon-signal pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a>Calendar <span class="glyphicon glyphicon-calendar pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a>Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a>Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notifications <span class="glyphicon glyphicon-bell pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>Assignment 2 due on 13-05-2017<span class="glyphicon glyphicon-exclamation-sign pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a>New comment on Assignment 1<span class="glyphicon glyphicon-comment pull-right"></span></a></li>
+          </ul>
+        </li>
         <span class="badge badge-notify">2</span>
-        <button class="btn btn-default btn btn-link" style="font-size:22px;">
-          <span class="glyphicon glyphicon-bell">Notifications</span>
-        </button>
       </ul>
     </nav>
   </div>
@@ -61,8 +68,8 @@
   <!-- lower page -->
   <div class="container-fluid">
 
-    <!-- Center - fixed breadcrumb -->
-    <div class="col-sm-11 col-lg-10 col-lg-offset-1">
+    <!-- Center  -->
+    <div id="center-content" class="col-sm-11 col-lg-10 col-lg-offset-1">
       <ol id="tabbing-controls" data-tabref="pages" class="breadcrumb list-inline" width="50%">
         <li id="homeTab" class="tab-controls active" data-ref="home" onclick="change_tab(this)">Home</li>
         <li id="ahTab" class="tab-controls" data-ref="art_history" onclick="ahTabButton()">Art History</li>
@@ -72,33 +79,33 @@
         <li id="specificAssignmentTab" class="tab-controls">Assignment x</li>
       </ol>
 
-
-      <!-- Scrollable page content -->
-      <div id="pages" class="row tabbed" data-offset-top="200">
+      <!-- Scrollable page content - tabs -->
+      <div id="pages" class="row tabbed">
 
         <!-- Home tab -->
-        <fieldset id="home" class="tab active-tab">
-          <row>
-            <div class="col-sm-3">
-              <h2 class="subject-header available-domain" onclick="showArtSubjects()">Art History</h2><br />
-            </div>
-            <div id="artSubjects">
+        <fieldset id="home" class="tab active-tab container">
+            <row>
               <div class="col-sm-3">
-                <ul>
-                  <li>Art Revolution</li>
-                  <li>Museums</li>
-                  <li>Shakespere</li>
-                </ul>
+                <h2 class="subject-header available-domain" onclick="showArtSubjects()">Art History</h2><br />
               </div>
-              <div class="col-sm-3">
-                <ul data-tabref="pages">
-                  <li class="available-subdomain" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
-                  <li>Renaissance</li>
-                  <li>Tudors</li>
-                </ul>
+              <div id="artSubjects">
+                <div class="col-sm-3">
+                  <ul class="list-unstyled">
+                    <li>Art Revolution</li>
+                    <li>Museums</li>
+                    <li>Shakespere</li>
+                  </ul>
+                </div>
+                <div class="col-sm-3">
+                  <ul class="list-unstyled" data-tabref="pages">
+                    <li class="available-subdomain" data-ref="classical_music" onclick="show_music_tab()">Classical Music</li>
+                    <li>Renaissance</li>
+                    <li>Tudors</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </row>
+            </row>
+
           <row>
             <div class="col-sm-12">
               <h2 class="subject-header">Biology</h2><br />
@@ -137,13 +144,13 @@
         </fieldset>
 
         <!-- Classical Music tab -->
-        <fieldset id="classical_music" class="tab">
+        <fieldset id="classical_music" class="tab container">
           <row>
             <div class="col-sm-4">
               <h2 class="subject-header available-domain" onclick="showAssignments()">Structured Questions</h2><br />
             </div>
             <div class="col-sm-6" id="assignments">
-              <ul>
+              <ul class="list-unstyled">
                 <li class="available-subdomain" onclick="createAssignment()">View Assignments</li>
                 <li>View Exemplars</li>
                 <li>View Homework Exercises</li>

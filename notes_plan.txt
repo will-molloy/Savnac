@@ -48,6 +48,9 @@ Modal box:
 Notifaction:
 	https://stackoverflow.com/a/23790800
 	
+Dropdown: 
+	https://www.bootply.com/0Mus55zdn5
+	
 Images:
 	Piano: https://pixabay.com/en/piano-music-score-music-sheet-1655558/
 	Mozart: https://pixabay.com/en/mozart-live-sculpture-salzburg-849566/
